@@ -1,4 +1,16 @@
-##Read and prepare applicable data
+##First, we read and prepare the applicable data.
+##
+##Due to the project instructions, we will assume that the file "household_power_consumption.txt"
+##is already in the users working directory.
+##However, we could download & unzip the file automatically using the following:
+##      download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",
+##              destfile="h.zip")
+##      unzip("h.zip")
+##
+##I use the 'fread' function of reading the file here, which requires the data.table package.
+##If that package is not already installed/loaded, it can be done so with the following:
+##      install.packages("data.table")
+##      library(data.table)
 
 findRows<-fread("household_power_consumption.txt", header = TRUE, select = 1)
 all<-(which(findRows$Date %in% c("1/2/2007", "2/2/2007")) )
@@ -29,7 +41,7 @@ legend("topright",lty=1,col=c("black","red","blue"),legend=c("Sub_metering_1","S
 
 ##Create the png file of plot3
 
-png(file="plot3.png")
+png(file="plot3.png",width=480,height=480)
 par(mfrow=c(1,1),bg="transparent")
 x<-hpc$DateTime
 a<-hpc$Sub_metering_1
