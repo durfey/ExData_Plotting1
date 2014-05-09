@@ -27,12 +27,17 @@ hpc<-data.frame(hpcDT)
 b<-strptime(paste(hpc$Date, hpc$Time,sep=" "),format = "%d/%m/%Y %H:%M:%S")
 hpc$DateTime<-b
 
+
 ##Plot 2
 
 par(mfrow=c(1,1),bg="transparent")
 with(hpc,plot(DateTime,Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
 
-##Create the png file of plot2
+
+##Creation of the png file of plot2.
+##Note: I purposefully made the background transparent, since the figures added
+##by the instructor are also transparent. (I mention this just because there has
+##been some contention in the forums about this aspect.)
 
 png(file="plot2.png",width=480,height=480)
 par(mfrow=c(1,1),bg="transparent")

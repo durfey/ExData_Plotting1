@@ -27,6 +27,7 @@ hpc<-data.frame(hpcDT)
 b<-strptime(paste(hpc$Date, hpc$Time,sep=" "),format = "%d/%m/%Y %H:%M:%S")
 hpc$DateTime<-b
 
+
 ##Plot 3
 
 par(mfrow=c(1,1),bg="transparent")
@@ -39,7 +40,11 @@ lines(x,b,col="red")
 lines(x,c,col="blue")
 legend("topright",lty=1,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
-##Create the png file of plot3
+
+##Creation of the png file of plot3
+##Note: I purposefully made the background transparent, since the figures added
+##by the instructor are also transparent. (I mention this just because there has
+##been some contention in the forums about this aspect.)
 
 png(file="plot3.png",width=480,height=480)
 par(mfrow=c(1,1),bg="transparent")

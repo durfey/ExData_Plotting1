@@ -34,7 +34,10 @@ par(mfrow=c(1,1),bg="transparent")
 with(hpc,hist(Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)"))
 
 
-##Create the png file of plot1
+##Creation of the png file of plot1
+##Note: I purposefully made the background transparent, since the figures added
+##by the instructor are also transparent. (I mention this just because there has
+##been some contention in the forums about this aspect.)
 
 png(file="plot1.png",width=480,height=480)
 par(mfrow=c(1,1),bg="transparent")

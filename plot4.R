@@ -27,6 +27,7 @@ hpc<-data.frame(hpcDT)
 b<-strptime(paste(hpc$Date, hpc$Time,sep=" "),format = "%d/%m/%Y %H:%M:%S")
 hpc$DateTime<-b
 
+
 ##Plot 4
 
 par(mfrow = c(2,2),bg="transparent")
@@ -45,7 +46,11 @@ lines(x,c,col="blue")
 legend("topright",lty=1,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),bty="n")
 plot(x,y3,type="l",xlab="datetime",ylab="Global_reactive_power")
 
-##Create the png file of plot4
+
+##Creation of the png file of plot4
+##Note: I purposefully made the background transparent, since the figures added
+##by the instructor are also transparent. (I mention this just because there has
+##been some contention in the forums about this aspect.)
 
 png(file="plot4.png",width=480,height=480)
 par(mfrow = c(2,2),bg="transparent")
